@@ -5,11 +5,19 @@
      \__/\___|\___|.....\__/\___|\___|\__,_|_|..|_|\__|\__, |
      ..................................................|___/.
 
+
                 Created By Bar Hofesh (ba7a7chy)
                              And 
                Yuval Nativ (tisf) of See-Security
                    http://www.see-security.org
                   https://avtacha.wordpress.com
+
+
+
+    This script will create threading connections to a host
+   at a port given with a specific header to test and which
+     strings can be used. It is a simple fuzzer for you to
+                     use for your research. 
 
 
 Use the -p or --port for the target port to fuzz.
