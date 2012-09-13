@@ -154,7 +154,7 @@ PATH=$PATH:$HOME/.rvm/bin
         echo "--------------- Events on this day ---------------"
         mon=`date +%B` 
         day=`date +%d`
-        wikipedia2text -b elinks "$day $mon" | grep -A 30 "^ Events"
+        wikipedia2text -b elinks "$day $mon" | grep -A 30 "^Events"
         echo "---------------------------------------------------"
         echo ""
     }
@@ -165,7 +165,7 @@ PATH=$PATH:$HOME/.rvm/bin
         echo "--------------- Deaths on this day ---------------"
         mon=`date +%B` 
         day=`date +%d`
-        wikipedia2text -b elinks "$day $mon" | grep -A 30 "^ Deaths"
+        wikipedia2text -b elinks "$day $mon" | grep -A 30 "^Deaths"
         echo "---------------------------------------------------"
         echo ""
     }
@@ -176,7 +176,7 @@ PATH=$PATH:$HOME/.rvm/bin
         echo "--------------- Births on this day ---------------"
         mon=`date +%B` 
         day=`date +%d`
-        wikipedia2text -b elinks "$day $mon" | grep -A 30 "^ Births"
+        wikipedia2text -b elinks "$day $mon" | grep -A 30 "^Births"
         echo "---------------------------------------------------"
         echo ""
     }
@@ -208,4 +208,14 @@ PATH=$PATH:$HOME/.rvm/bin
         echo "---------------------------------------------------"
         echo ""
     }
-
+    
+	extip ()
+	{
+		mkdir blabla
+		cd blabla
+		wget -q http://www.showmemyip.com/
+		cat index.html | grep '<span id="IPAddress"' | awk '{print $2}' | sed "s/.......$//" | cut -c16-99
+		rm index.html
+		cd ..
+		rmdir blabla
+	}
